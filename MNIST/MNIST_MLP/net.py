@@ -23,6 +23,6 @@ def net(input_tensor, regularizer):
     with tf.variable_scope('layer2'):
         weights = get_weight_variable([LAYER1_NODE, OUTPUT_NODE], regularizer)
         biases = tf.get_variable(
-            "biases", [OUTPUT_NODE], initializer=th.constant_initializer(0.0))
+            "biases", [OUTPUT_NODE], initializer=tf.constant_initializer(0.0))
         layer2 = tf.matmul(layer1, weights) + biases
     return layer2
